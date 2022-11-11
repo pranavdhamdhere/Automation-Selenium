@@ -1,0 +1,20 @@
+package methods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MethodsWebelement {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+
+		// Launch Browser.
+		WebDriver driver = new ChromeDriver();
+		
+		// click button.
+		driver.get("https://www.apple.com/in/");
+		driver.findElement(By.xpath("//a[@class=\"ac-gn-link ac-gn-link-watch\"]")).click();
+		
+    }
+   }
