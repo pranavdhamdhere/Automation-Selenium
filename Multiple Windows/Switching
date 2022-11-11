@@ -1,0 +1,43 @@
+package multipletab;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandle {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		//1st tab
+		driver.get("https://www.google.com/");
+		System.out.println(driver.getCurrentUrl());
+		String firstID = driver.getWindowHandle();
+		System.out.println(firstID);
+		
+		//2nd tab
+		WebDriver secondTab = driver.switchTo().newWindow(WindowType.TAB);
+		secondTab.navigate().to("https://www.facebook.com/");
+		System.out.println(driver.getCurrentUrl());
+		String secondID = secondTab.getWindowHandle();
+		secondTab.findElement(By.xpath("//a[text()=\"Forgotten password?\"]")).click();
+		System.out.println(driver.getCurrentUrl());
+		
+		//1st tab
+		driver.switchTo().window(firstID);
+		
+		Thread.sleep(3000);
+		
+		//3rd tab
+		WebDriver thirdTab = secondTab.switchTo().newWindow(WindowType.TAB);
+		thirdTab.get("https://www.youtube.com/");
+		Thread.sleep(5000);
+		thirdTab.findElement(By.xpath("//input[@id=\"search\"]")).sendKeys("manike thank god");
+		thirdTab.findElement(By.id("search-icon-legacy")).click();
+		Thread.sleep(5000);
+		thirdTab.findElement(By.xpath("(//a[@id=\"video-title\"])[1]")).click();
+	}
+
+}
