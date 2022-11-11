@@ -1,0 +1,28 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DoubleClick {
+
+	public static void main(String[] args) throws InterruptedException  {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    
+    //Launch URL.
+		driver.get("https://www.amazon.in/");
+    Thread.sleep(5000);
+
+    //Store located webelement in variable. 
+		WebElement rightClick = driver.findElement(By.id("nav-logo-sprites"));
+    
+    //Create object of the Actions class.
+		Actions A = new Actions(driver);
+    
+    //Perform right click operation.
+		A.contextClick(rightclick).perform();
+	}
+}
