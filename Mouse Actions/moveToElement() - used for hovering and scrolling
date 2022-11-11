@@ -1,0 +1,28 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Hover {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    
+		driver.get("https://www.flipkart.com/big-diwali-sale-store?otracker=hp_bannerads_1_2.bannerAdCard.BANNERADS_x_4GKLFO8HIZZK");
+    
+    //Store webelement to be hovered on.
+		WebElement hover = driver.findElement(By.xpath("(//span)[6]"));
+    
+    //Create object of the Actions class.
+		Actions A = new Actions(driver);
+    
+    //perform hover operation.
+		A.moveToElement(hover).perform();
+
+	}
+
+}
