@@ -17,3 +17,5 @@ public class Locators {
     
     //Locating webelement using tagName
 		driver.findElement(By.tagName("button")).click();
+   }
+  }
