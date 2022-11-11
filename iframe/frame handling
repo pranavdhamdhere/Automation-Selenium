@@ -1,0 +1,29 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DragNDrop {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.globalsqa.com/demo-site/draganddrop/");
+		Thread.sleep(5000);
+		WebElement frame = driver.findElement(By.xpath("//iframe[@class=\"demo-frame lazyloaded\"]"));
+		driver.switchTo().frame(frame);
+		WebElement drag1 = driver.findElement(By.xpath("//img[@alt=\"Planning the ascent\"]"));
+		//WebElement drag2 = driver.findElement(By.xpath("//img[@alt=\"On top of Kozi kopka\"]"));
+
+		WebElement drop = driver.findElement(By.id("trash"));
+		Actions A = new Actions(driver);
+		A.clickAndHold(drag1).moveToElement(drop).release(drop).build().perform();
+		//A.dragAndDrop(drag2, drop);
+
+	}
+
+}
