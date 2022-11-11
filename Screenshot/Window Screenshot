@@ -1,0 +1,34 @@
+package takescreenshot;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+
+public class WindowSS {
+
+	public static void main(String[] args) throws IOException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		driver.get("https://burst.shopify.com/india?sort=latest");
+	
+		//Typecasting.
+		TakesScreenshot t = (TakesScreenshot)driver;
+		
+		//Taking the Screenshot.
+		File source = t.getScreenshotAs(OutputType.FILE);
+		
+		//Storing the SS at targeted location.
+		File target = new File(".\\SShots\\1.png");  //Firstly create SShots folder in project folder. 
+		
+		//copy the ss from source to target location.
+		FileHandler.copy(source, target);
+    
+    }
+ }
