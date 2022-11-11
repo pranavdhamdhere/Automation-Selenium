@@ -1,0 +1,21 @@
+package basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locators {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+
+		// Launch Browser.
+		WebDriver driver = new ChromeDriver();
+		 
+		//Launch URL
+		//driver.get("https://account.booking.com/sign-in?op_token=EgVvYXV0aCK7BQoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q2gRVc0FEUTktb3FHdV9KM2ZjZHhiR0VfRTJmT3diNExUbG8xZGtLVEh0T05HZlQ5UW9lYS1XY09PLVFBNmpaWlUxR2I2WXUyUmpnWWNFeXlrVzVXYmhXckV3R1V3QzMwaERKZm5fRXdRM01iREt0SnRESzdWdkU5ek9idFdPYWhIdmplZndnbmVUYnN5ZWZ1YUlGM08wV2xrTy14UFJTbEd3bWJuYTI0ZHBpdWJSZEdSLUdwcDVVMjJFaEFEYm9naVVNbmdhX25nMDdpQ3RKeUFrcUotSndqM1U4dkhOcnRxcWt1M0N1a1Z0VDNMUG9obWNZZElTMk9ielFSODdZeDIwZkJnWFdKUkx3Um4tYXNvbWJ3anNrTWhZbVI2bkJjUVUzSEQ0eDc0RC1MNWFRMXhKTlVjbzBfdHpqdzZ4alFBN1g0UEJuclgxS1hYc0xad0VkRUtYNlhrcVlMM3lhUURQX1FXVUVhbzJXTlBFazJZX3pwMUVIVXFiNVc4RGRwNExxWTE5aGJBMFAzTy00NEZwdGd6bjl6VHFQenN2NldoaGNZbnhZZE5KXzQzbGFoVl80SHR5U2JzQWlfS0N2U3ZzS1IzWkNJMkZjaVFMMzZlcGVIamNibU9kVVQyMFp1SXVia1pjSkVxM3lrLTJpbFYwcHN5dGg2dlh5X3dzak5qd2dkdVl1VjZ5bTYzN0lMRmk0WVlxLU1uc2NfNkJ3Q05RYThnN25fbDFuUDdMbVJHb1A0UzhHTTBYZ0wyTnBhMGhHXzBIc043MjlJLU51RUxoWE50T1RtbWF5UUIEY29kZSoZCIbcFDC0l_bhjOwlOgBCAFiroM-ZBoABAQ");
+    
+    //Locating webelement using linkText
+		driver.findElement(By.linkText("Terms & Conditions")).click();
+   }
+  }
