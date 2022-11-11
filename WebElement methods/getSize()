@@ -13,12 +13,9 @@ public class MethodsWebelement {
 		// Launch Browser.
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://www.apple.com/in/");
-	  
-   
-		driver.get("https://www.apple.com/in/");
+		driver.get("https://www.apple.com/in/"):
     
-    // get size of element.
+   		// get size of element.
 		Dimension size = driver.findElement(By.xpath("//a[@class=\"ac-gn-link ac-gn-link-watch\"]")).getSize();
 		System.out.println(size);
     
