@@ -1,0 +1,17 @@
+package methods;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MethodsWebdriver {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		
+		//Open the Browser.
+		WebDriver driver = new ChromeDriver();
+		
+		//Open Application with its url.
+		driver.get("https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=d7b530a4-7680-4c23-a8bf-c52c121d2e87&scope=User.Read%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fwww.msn.com%2Fstaticsb%2Fstatics%2Flatest%2F0%2Fauth%2Fauth-redirect.html&client-request-id=02d1919e-ceb4-4089-9149-ad76d302b195&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.18.0&x-client-OS=&x-client-CPU=&client_info=1&code_challenge=JsUH1PaCJTiOla875YXQzgUKrpckrez1yihyRJ5ALsA&code_challenge_method=S256&prompt=select_account&nonce=c62b9651-3638-426e-9661-516f01718c23&state=eyJpZCI6IjE2MjFlZjkxLTY3M2UtNDJhMi05MGZkLTg0YWZjYjk0MzFmNCIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7C%257B%2522appType%2522%253A%2522windows%2522%252C%2522authRedirJsVer%2522%253A%25222.6%2522%252C%2522buildVersion%2522%253A%252220220927.154%2522%252C%2522msalJsVer%2522%253A%25222.18.0%2522%252C%2522returnUrl%2522%253A%2522https%253A%252F%252Fwww.msn.com%252Fen-in%252Ffeed%253Focid%253Dmsedgntp%2522%257D");
+		}
+   }
