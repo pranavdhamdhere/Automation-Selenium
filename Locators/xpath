@@ -1,0 +1,51 @@
+package basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class xpathLocator {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+
+		// Launch Browser.
+		WebDriver driver = new ChromeDriver();
+		
+		//Locating webelements using xpath
+		
+		  //1. by id 
+		  driver.get("https://login.tripleseat.com/");
+		  driver.findElement(By.xpath("//input[@id=\"login\"]")).sendKeys("hello");
+		  
+		  //2. by contains 
+		  driver.get("https://login.tripleseat.com/");
+		  driver.findElement(By.xpath("//a[contains(text(),\"Forgot\")]")).click();
+		
+		  //3. by text 
+		  driver.get("https://login.tripleseat.com/");
+		  driver.findElement(By.xpath("//a[contains(text(),\"Forgot your Password?\")]")).click();
+
+		  //4. by attribute
+		  driver.get("https://login.tripleseat.com/");
+		  driver.findElement(By.xpath("//input[@autofocus=\"autofocus\"]")).sendKeys("hello");
+		  driver.findElement(By.xpath("//input[@autocomplete=\"false\"]")).sendKeys("olleh");
+		  driver.findElement(By.xpath("//input[@value=\"Sign In\"]")).click();
+		  
+		  //5. by index 
+		  driver.get("https://login.tripleseat.com/#");
+		  driver.findElement(By.xpath("(//input)[5]")).click(); //to uncheck
+		
+		  //6. by or
+		  driver.get("https://www.india.gov.in/");
+		  driver.findElement(By.xpath("//input[@name=\"s\"or@id=\"abc\"]")).sendKeys("budget");
+		
+		  //7. by and
+		  driver.get("https://www.india.gov.in/");
+		  driver.findElement(By.xpath("//input[@name=\"s\"and@id=\"search_key\"]")).sendKeys("budget");
+		  
+		  //8. by starts-with
+		  driver.get("https://www.india.gov.in/");
+		  driver.findElement(By.xpath("//input[starts-with(@id,\"sear\")]")).sendKeys("budget");
+	}
+}
