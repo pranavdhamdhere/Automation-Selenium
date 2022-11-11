@@ -17,3 +17,5 @@ public class Locators {
 		
     // Locating webelement using id
     driver.findElement(By.id("username")).sendKeys("xyz");
+    }
+   }
