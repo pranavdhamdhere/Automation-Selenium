@@ -1,0 +1,19 @@
+package basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locators {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+
+		// Launch Browser.
+		WebDriver driver = new ChromeDriver();
+		
+		// Launch URL
+		driver.get("https://account.booking.com/sign-in?op_token=EgVvYXV0aCKxAwoUdk8xS2Jsazd4WDl0VW4yY3BaTFMSCWF1dGhvcml6ZRo1aHR0cHM6Ly9zZWN1cmUuYm9va2luZy5jb20vbG9naW4uaHRtbD9vcD1vYXV0aF9yZXR1cm4q0AJVdmtCUTktb3FHdV9KM2VxVFpQQkVGYTFBSWZKTjdVaF81RmFwcTFQR3JHOUxzT0J2RUs1V0RHMGRobUlXNzFCMFBFUGc1cjJSeEhVbzNObFRSalYzLVFtNGJNcHJXeFJjckJmTm1ocnlzS0J4eWVpc0F6a0wxLXdBb0h6elpvdlZnck5pTnpUdVFubWlOazU4SlZON2RhN1ZHdWYzeGVHNnBUeVN6WEFDbEZ0TEZVT2xiUFRXVkcySHd2N1FvQmF5TEExRnpFM1MtaEZLaUpQTlkxbDgwT3dJOXVxVU9DQW1CRlRXbGV3b0dfa2x3VXkzc0IwTE5CNWV3Zi1oN0ZIV0lucDhRVHZNa1EtRWdIMXc3M3RCYXdLSFJTM2Z1VzRxMTN4V3dxbGdaY0R4VWhGYVd4dWVEemRuY0lhQ0tmWlpTc2pYTzM4YXg4LU9JZU9CBGNvZGUqGQjs2F0w-LXS4vjrJToAQgBY-ufOmQaAAQE"); 
+		
+    // Locating webelement using id
+    driver.findElement(By.id("username")).sendKeys("xyz");
