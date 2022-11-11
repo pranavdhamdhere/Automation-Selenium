@@ -1,0 +1,33 @@
+package synchronization;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Waits {
+
+	public static void main(String[] args) throws InterruptedException  {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		//Explicit Wait - 
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		driver.get("https://about.meta.com/community/vr-for-good/?utm_source=www.oculus.com&utm_medium=redirect");
+    
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button)[1]"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img)[5]"))).click();
+	    System.out.print("isTextPresent: "+wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//p[contains(text(),\"schizophrenia\")]"), "schizophrenia")));
+	
+	}
+
+}
