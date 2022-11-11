@@ -1,0 +1,31 @@
+package popups;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertPouup {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+	
+		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+		Thread.sleep(5000);
+		driver.findElement(By.className("signinbtn")).click();
+		Thread.sleep(3000);
+    
+    //alertbox handling
+		Alert alert = driver.switchTo().alert();
+		Thread.sleep(3000);
+    
+		String t = alert.getText();
+		System.out.println(t);
+    
+		alert.dismiss();
+		//alert.accept();
+    
+    }
+  }
