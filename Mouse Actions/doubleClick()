@@ -1,0 +1,27 @@
+package mouseactions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DoubleClick {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    
+    //Launch URL.
+		driver.get("https://www.amazon.in/");
+    
+    //Store located webelement in variable. 
+		WebElement doubleclick = driver.findElement(By.id("twotabsearchtextbox"));
+    
+    //Create object of the Actions class.
+		Actions A = new Actions(driver);
+    
+    //Perform double click operation.
+		A.doubleClick(doubleclick).perform();
+	}
+}
