@@ -1,0 +1,32 @@
+package takescreenshot;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+
+public class ElementSS {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+    
+		driver.get("https://burst.shopify.com/india?sort=latest");
+		Thread.sleep(7000);
+    
+		WebElement img = driver.findElement(By.xpath("//img[@data-photo-id=\"13795\"]"));
+    
+		File src = img.getScreenshotAs(OutputType.FILE);
+		
+		File trg = new File(".\\SShots\\1.jpeg");  //Firstly create SShots folder in Project folder.
+		
+    FileHandler.copy(src, trg);
+	}
+
+}
