@@ -1,0 +1,18 @@
+package basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LaunchURL {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pranav\\Documents\\Eclipse_Software_Testing\\Automation\\Drivers\\chromedriver.exe");
+
+		// Launch Browser.
+		WebDriver driver = new ChromeDriver();
+		
+		  //Launch URL
+		driver.get("https://account.booking.com"); 
+     //or
+		driver.navigate().to("https://account.booking.com"); 
