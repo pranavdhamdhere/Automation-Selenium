@@ -14,11 +14,8 @@ public class MethodsWebelement {
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("https://www.apple.com/in/");
-	  
-   
-		driver.get("https://www.apple.com/in/");
     
-    // get location of element.
+  		// get location of element.
 		Point p = driver.findElement(By.xpath("//a[@class=\"ac-gn-link ac-gn-link-watch\"]")).getLocation();
 		System.out.println(p);
     
